@@ -1,0 +1,43 @@
+header{
+    width: 100%;
+    background-color: rgba(249, 115, 22, 0.15);
+}
+
+.glass {
+    /* background: rgba(255, 255, 255, 0.1);  transparencia  */
+    /* backdrop-filter: blur(10px);  */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-menu{
+    display: flex;
+    width: 1140px;
+    height: 100px;
+    margin: 0 auto;
+    justify-content: space-between;    
+    align-items: center;
+}
+
+.logo{
+    font-family: "Montserrat", poppins ,sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: none;
+    color: #F97316;
+}
+
+nav{
+    display: flex;
+    gap: 10px;
+}
+
+nav a{
+    font-family: "poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: right;
+    color: #fff;
+}
