@@ -8,13 +8,6 @@ header{
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.glass {
-    /* background: rgba(255, 255, 255, 0.1);  transparencia  */
-    /* backdrop-filter: blur(10px);  */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
-
 .header-bar{
     display: flex;
     width: 1140px;
