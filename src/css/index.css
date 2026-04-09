@@ -1,3 +1,25 @@
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1140px;
+  height: 100vh;
+  pointer-events: none; /* no bloquea clicks */
+  z-index: 9999;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.grid-overlay div {
+  background: rgba(255, 255, 255, 0.05); /* columnas claras */
+  border-left: 1px solid rgba(255,255,255,0.15);
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,4 +28,42 @@
 
 body{
     background-color: #000;
+}
+
+.hero{
+    display: flex;
+    padding: 100px 0px;
+    width: 1140px;
+    height: 580px;
+    margin: 0 auto;
+    align-items: center;
+}
+.hero h1{
+    font-family: "Montserrat", poppins ,sans-serif;
+    font-size: 50px;
+    font-weight:800;
+    color: #fff;
+    width: 567px;
+}
+
+.hero h1 span{
+    color: #2563EB;
+    font-style: italic;
+}
+
+.hero p{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    width: 517px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.button-main{
+    background-color: #F97316;
+    border-radius: 50px;
+    padding: 10px 28px;
+    border: 0px;
 }

@@ -1,6 +1,11 @@
 header{
     width: 100%;
     background-color: rgba(249, 115, 22, 0.15);
+    position: fixed;
+    z-index: 1000;
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .glass {
@@ -10,7 +15,7 @@ header{
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.contenedor-menu{
+.header-bar{
     display: flex;
     width: 1140px;
     height: 100px;
@@ -28,16 +33,27 @@ header{
     color: #F97316;
 }
 
-nav{
+.navbar ul{
     display: flex;
     gap: 10px;
+    margin-right: 20px;
+    justify-content: space-around;
+    list-style-type: none;
 }
 
-nav a{
+.navbar a{
     font-family: "poppins", sans-serif;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
     text-align: right;
     color: #fff;
+}
+
+.navbar a:hover{
+    color: #F97316;
+}
+
+.navbar .active{
+    color: #F97316;
 }
