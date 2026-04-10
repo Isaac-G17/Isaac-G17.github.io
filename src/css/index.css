@@ -7,7 +7,7 @@
     max-width: 1140px;
     height: 100vh;
     pointer-events: none;
-    /* no bloquea clicks */
+    
     z-index: 9999;
 
     display: grid;
@@ -17,7 +17,7 @@
 
 .grid-overlay div {
     background: rgba(255, 255, 255, 0.05);
-    /* columnas claras */
+    
     border-left: 1px solid rgba(255, 255, 255, 0.15);
     border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -32,17 +32,26 @@ body {
     background-color: #000;
 }
 
+/* section hero */
 .hero {
     display: flex;
-    position: relative;
-    width: 1140px;
+    width: 1920px;
     height: 700px;
     margin: 0 auto;
     align-items: center;
     background-image: url(/public/img/Orange\ light.png);
-    background-size: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center center;
-    overflow: hidden;
+}
+
+.contend-hero{
+    display: flex;
+    position: relative;
+    width: 1140px;
+    margin: 0 auto;
+    align-items: center;
+    align-content: center;
 }
 
 .text {
@@ -120,15 +129,17 @@ body {
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    background-image: url(/public/icons/imagen\ 1.svg);
+    background-image: url(/public/icons/check.svg);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-/* .img-area{
+.img-area{
     position: relative;
+    width: 50%;
     height: 700px;
-} */
+
+}
 
 .foto{
     position: absolute;
@@ -138,9 +149,108 @@ body {
     height: auto;
 }
 
-.glass {
-    /* background: rgba(255, 255, 255, 0.1);  transparencia  */
-    /* backdrop-filter: blur(10px);  */
+/* Section problem-solution */
+
+.problem-solution{
+    display: flex;
+    width: 1140px;
+    height: 362px;
+    margin: 0 auto;
+    align-items: center;
+    align-content: center;
+}
+
+.problem h2{
+    font-family: "Montserrat", Poppins, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: #2563EB;
+    width: 605px;
+}
+
+.problem p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: justify;
+    color: #fff;
+    width: 463px;
+    margin-top: 8px;
+}
+
+
+
+.solution{
+    display: flex;
+    align-items: center;
+    background-image: url(/public/img/pc.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center right;
+}
+
+.arrows{
+    background-color: transparent;
+    border: 0px;
+    padding: 5px;
+    align-items: center;
+    position: relative;
+    left: 280px;
+    animation: flotar 5s ease-in-out infinite;
+
+}
+
+.arrows img{
+    width: 65px;
+    height: 65px;
+}
+
+.arrows:active{
+    background-color: #fff;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+
+.box-solution{
+    width: 366px;
+    height: 206px;
+    background-color: rgba(249, 115, 22, 0.1);
+    backdrop-filter: blur(5px); 
+    border: 1px solid #ea5a0c;
+    border-radius: 20px;
+    align-content: center;
+    position: relative;
+    right: -310px;
+}
+
+.box-solution h2{
+    font-family: "Montserrat", Poppins, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    color: #F97316;
+}
+
+.box-solution p{
+    
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+    margin: 8px auto 0;
+    width: 325px;
+}
+
+
+/* .glass {
+    background: rgba(255, 255, 255, 0.1);  
+    backdrop-filter: blur(10px);  
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
+} */
