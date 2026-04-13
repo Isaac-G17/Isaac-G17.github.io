@@ -1,4 +1,4 @@
-.grid-overlay {
+/* .grid-overlay {
     position: fixed;
     top: 0;
     left: 50%;
@@ -20,7 +20,7 @@
     
     border-left: 1px solid rgba(255, 255, 255, 0.15);
     border-right: 1px solid rgba(255, 255, 255, 0.15);
-}
+} */
 
 * {
     margin: 0;
@@ -29,29 +29,27 @@
 }
 
 body {
+    min-height: 100vh;
     background-color: #000;
 }
 
 /* section hero */
 .hero {
-    display: flex;
-    width: 1920px;
     height: 700px;
-    margin: 0 auto;
-    align-items: center;
-    background-image: url(/public/img/Orange\ light.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url(/public/img/Orange_light.png);
     background-position: center center;
-}
+    background-repeat: no-repeat;
+    background-size: auto;
+} 
 
 .contend-hero{
     display: flex;
+    flex-direction: row;
     position: relative;
     width: 1140px;
     margin: 0 auto;
     align-items: center;
-    align-content: center;
+    justify-content: center;
 }
 
 .text {
@@ -237,7 +235,6 @@ body {
 }
 
 .box-solution p{
-    
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -246,6 +243,110 @@ body {
     margin: 8px auto 0;
     width: 325px;
 }
+
+/* Section service */
+.service{
+    background-image: url(/public/img/ligh_servicios.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.contend-service{
+    display: flex;
+    flex-direction: column;
+    width: 1140px;
+    height: 694px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.service h2{
+    font-family: "Montserrat", Poppins, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+}
+
+.service h2 span{
+    color: #F97316;
+}
+
+.services{
+    display: flex;
+    width: 1090px;
+    margin-top: 40px;
+    gap: 20px;
+    flex-flow: row wrap;
+
+}
+
+.glass-orange{
+    width: 350px;
+    height: 150px;
+    padding: 41px 43px;
+    background-color: rgba(249, 115, 22, 0.1) ;
+    border: 1px solid rgba(234, 88, 12, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+
+.glass-orange h3{
+    font-family: "Montserrat", Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    color: #F97316;
+}
+
+.glass-orange p{
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+    margin: 8px auto 0;
+}
+
+.glass{
+    width: 350px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0) ;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; 
+}
+
+
+.glass h3{
+    font-family: "Montserrat", Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+}
+
+.glass p{
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+    margin: 8px auto 0;
+    width: 248px;
+}
+
 
 
 /* .glass {
