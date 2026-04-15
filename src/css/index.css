@@ -46,11 +46,14 @@ body {
 .contend-hero{
     display: flex;
     flex-direction: row;
-    position: relative;
     width: 1140px;
     margin: 0 auto;
     align-items: center;
     justify-content: center;
+}
+
+.text-hero{
+    width: 50%;
 }
 
 .text {
@@ -66,7 +69,7 @@ body {
 }
 
 .text h1 span {
-    color: #2563EB;
+    color: #F97316;
     font-style: italic;
 }
 
@@ -158,11 +161,15 @@ body {
     align-content: center;
 }
 
+.problem{
+    width: 50%;
+}
+
 .problem h2{
     font-family: "Montserrat", Poppins, sans-serif;
     font-size: 30px;
     font-weight: 800;
-    color: #2563EB;
+    color: #F97316;
     width: 605px;
 }
 
@@ -179,12 +186,13 @@ body {
 
 
 .solution{
+    width: 50%;
     display: flex;
     align-items: center;
     background-image: url(/public/img/pc.png);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center right;
+    background-position: center center;
 }
 
 .arrows{
@@ -381,6 +389,56 @@ body {
     margin: 8px auto 0;
     width: 248px;
 }
+
+/* section about */
+.about{
+    background-image: url(/public/img/light-about-me.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.contend-about{
+    display: flex;
+    flex-direction: row;
+    width: 1140px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-about{
+    width: 50%;
+}
+
+.text-about{
+    width: 50%;
+}
+
+.text-about h2{
+    font-family: "Montserrat", Poppins, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: start;
+    color: #fff;
+}
+
+.text-about h2 span{
+    color: #F97316;
+}
+
+.text-about p{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: justify;
+    color: #fff;
+    
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+
 
 /* section step */
 
