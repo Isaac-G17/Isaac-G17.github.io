@@ -26,7 +26,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fff;
+    /* color: #fff; */
 }
 
 body {
@@ -536,6 +536,25 @@ body {
     color: #fff;
     width: 281px;
     margin-top: 8px;
+}
+
+.contact{
+    display: flex;
+    flex-direction: row;
+    width: 1140px;
+    height: 562px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 34px;
+}
+
+.form-contact{
+    width: 50%;
+}
+
+.text-contact{
+    width: 50%;
 }
 
 /* .text-1{
