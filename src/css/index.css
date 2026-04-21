@@ -1,32 +1,8 @@
-/* .grid-overlay {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1140px;
-    height: 100vh;
-    pointer-events: none;
-    
-    z-index: 9999;
-
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 20px;
-}
-
-.grid-overlay div {
-    background: rgba(255, 255, 255, 0.05);
-    
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
-} */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* color: #fff; */
+    color: #fff; 
 }
 
 body {
@@ -227,7 +203,8 @@ body {
     border-radius: 20px;
     align-content: center;
     position: relative;
-    right: -310px;
+    right: -810px;
+    transition: transform 0.5s ease;
 }
 
 .box-solution h2 {
@@ -412,6 +389,7 @@ body {
     flex-direction: row;
     width: 1140px;
     margin: 0 auto;
+    background-image: linear-gradient(to top, #000000 0%, #ffffff00 10%);
     align-items: center;
     justify-content: center;
 }
@@ -553,18 +531,19 @@ body {
 .contact{
     display: flex;
     width: 1140px;
-    height: 562px;
-    margin: 0 auto;
+    height: 500px;
+    margin: auto;
     justify-content: center;
     align-items: center;
+    gap: 30px;
 }
 
 .form-contact{
-    width: 50%;
+    width: 60%;
 }
 
 .text-contact{
-    width: 50%;
+    width: 40%;
 }
 
 .text-contact h2 {
@@ -593,22 +572,23 @@ body {
     background-color: #F97316;
     color: #fff;
     border-radius: 50px;
-    margin-bottom: 20px;
     padding: 10px 28px;
     border: 0px;
     text-decoration: none;
 }
 
-/* .text-1{
-    position: relative;
-    top: 45px;
-} */
+.contac-info {
+    margin-top: 30px;
+    color: #fff;
+    list-style: none;
+    gap: 10px;
+}
 
-
-
-/* .glass {
-    background: rgba(255, 255, 255, 0.1);  
-    backdrop-filter: blur(10px);  
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-} */
+.contac-info li{
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    gap: 10px;
+    margin-bottom: 10px;
+}
