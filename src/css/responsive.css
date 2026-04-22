@@ -1,0 +1,400 @@
+/* // `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff; 
+    }
+
+    body{
+        background-color: #000;
+    }
+
+    /* section hero */
+    .hero{
+        height: 1216px;
+        padding: 20px;
+        background-image: url(/public/img/Movil/HERO\ -\ movil.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .contend-hero {
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        margin: 0 auto;
+        padding-top: 150px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .text h1 {
+        font-family: "Montserrat", poppins, sans-serif;
+        font-size: 30px;
+        font-weight: 800;
+        color: #fff;
+    }
+
+    .text h1 span {
+        color: #F97316;
+        font-style: italic;
+    }
+
+    .text p {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+        margin-top: 8px;
+        margin-bottom: 24px;
+    }
+
+    .button-main {
+        display: inline-block;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 24px;
+        background-color: #F97316;
+        color: #fff;
+        border-radius: 50px;
+        margin-bottom: 20px;
+        padding: 10px 28px;
+        border: 0px;
+        text-decoration: none;
+        text-align: center;
+        width: fit-content;
+    }
+
+    .button-second {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 24px;
+        background-color: #ffffff00;
+        color: #F97316;
+        border: 1px solid #F97316;
+        border-radius: 50px;
+        padding: 10px 28px;
+        text-decoration: none;
+        text-align: center;
+        width: fit-content;
+    }
+
+    .button-second:hover {
+        color: #fff;
+    }
+
+    .points {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        color: #fff;
+        list-style: none;
+        margin-top: 20px;
+    }
+
+    .points li {
+        position: relative;
+        padding-left: 25px;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .points li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background-image: url(/public/icons/check.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .img-hero {
+        position: relative;
+        width: 100%;
+    }
+
+    .foto {
+        position: absolute;
+        left: -87px;
+        
+    }
+    /* Section problem-solution */
+
+    .problem-solution {
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        height: 574px;
+        gap: 20px;
+        padding: 50px 0px;
+        margin: 0 auto;
+        align-items: center;
+        align-content: center;
+        overflow: hidden;
+    }
+
+    .problem {
+        width: 100%;
+    }
+
+    .problem h2 {
+        font-family: "Montserrat", Poppins, sans-serif;
+        font-size: 18px;
+        text-align: center;
+        font-weight: 800;
+        color: #F97316;
+        max-width: 100%;
+    }
+
+    .problem p {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: justify;
+        color: #fff;
+        margin-top: 8px;
+    }
+
+
+
+    .solution {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        background-image: url(/public/img/pc.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+    }
+
+    .arrows {
+        background-color: transparent;
+        border: 0px;
+        padding: 5px;
+        align-items: center;
+        position: relative;
+        left: 130px;
+        bottom: 9px;
+    }
+
+    .arrows img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .arrows:active {
+        background-color: #fff;
+    }
+
+    .box-solution {
+        width: 366px;
+        height: 206px;
+        background-color: rgba(249, 115, 22, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid #ea5a0c;
+        border-radius: 20px;
+        align-content: center;
+        position: absolute;
+        right: -240px;
+        transition: transform 0.5s ease;
+    }
+
+    .box-solution h2 {
+        font-family: "Montserrat", Poppins, sans-serif;
+        font-size: 25px;
+        font-weight: 700;
+        text-align: center;
+        color: #F97316;
+    }
+
+    .box-solution p {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        color: #fff;
+        margin: 8px auto 0;
+        max-width: 325px;
+        width: 100%;
+    }
+    /* Section service */
+    .service {
+        background-image: url(/public/img/Movil/SERVICIOS-movil.jpg);
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+
+    .contend-service {
+        display: flex;
+        background-image: linear-gradient(to bottom, #000000 0%, #ffffff00 10%);
+        flex-direction: column;
+        width: 100%;
+        max-width: 350px;
+        height: 1110px;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .service h2 {
+        font-family: "Montserrat", Poppins, sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        color: #fff;
+    }
+
+    .service h2 span {
+        color: #F97316;
+    }
+
+    .services {
+        display: flex;
+        width: 100%;
+        margin: 40px 0px;
+        gap: 20px;
+        flex-flow: column;
+    }
+
+    .services-row-1 {
+        display: flex;
+        flex-direction: column;
+        flex-flow:  wrap;
+        gap: 20px;
+    }
+
+    .services-row-2 {
+        display: flex;
+        flex-direction: column;
+        flex-flow: wrap;
+        gap: 20px;
+        margin: 0 auto;
+        /* align-items: center; */
+    }
+
+    .glass-orange {
+        width: 100%;
+        height: 150px;
+        padding: 41px 43px;
+        background-image: url(/public/img/Movil/recurso-1.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .glass-orange-2 {
+        width: 100%;
+        height: 150px;
+        padding: 41px 30px;
+        background-image: url(/public/img/Movil/recurso-1.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+
+    .glass-orange h3,
+    .glass-orange-2 h3 {
+        font-family: "Montserrat", Poppins, sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        color: #F97316;
+    }
+
+    .glass-orange p,
+    .glass-orange-2 p {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        text-align: center;
+        color: #fff;
+        margin: 8px auto 0;
+    }
+
+    .glass {
+        width: 350px;
+        height: 150px;
+        background-image: url(/public/img/Movil/recurso-2.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .glass-2 {
+        width: 350px;
+        height: 150px;
+        background-image: url(/public/img/Movil/recurso-2.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+
+    .glass h3,
+    .glass-2 h3 {
+        font-family: "Montserrat", Poppins, sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        color: #fff;
+    }
+
+    .glass p,
+    .glass-2 p {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        text-align: center;
+        color: #fff;
+        margin: 8px auto 0;
+        max-width: 248px;
+    }
+}
+
+
+
+/* // `lg` applies to medium devices (tablets, less than 992px) */
+/* @media (max-width: 991.98px) { } */
