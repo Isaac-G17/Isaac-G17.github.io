@@ -50,3 +50,68 @@ header{
 .navbar .active{
     color: #F97316;
 }
+
+.hamburger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.bar{
+    width: 25px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #fff;
+    margin: 2px 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px){
+    .header-bar{
+    width: 100%;
+    max-width: 340px;
+    }
+
+    .logo{
+        font-family: "Montserrat", poppins ,sans-serif;
+        font-size: 30px;
+        font-weight: 800;
+        font-style: italic;
+        text-decoration: none;
+        color: #F97316;
+    }
+
+    .navbar{
+        display: none;
+        position: absolute;
+        top: 105%;
+        right: 0;
+        background-color: #f9731626;
+        /* backdrop-filter: blur(10px);  */
+        width: 100%;
+        text-align: center;
+        z-index: 1000;
+        padding: 20px;
+    }
+
+    .navbar ul{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar .active{
+        color: #F97316;
+    }
+
+    .hamburger{
+        display: flex;
+    }
+
+    .navbar.show{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

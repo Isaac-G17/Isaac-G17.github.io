@@ -1,21 +1,9 @@
 /* // `md` applies to small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {
-    
-    /* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #fff; 
-    }
-
-    body{
-        background-color: #000;
-    } */
-
+@media (max-width: 768px) {
     /* section hero */
     .hero{
         height: 1216px;
-        padding: 20px;
+        padding: px;
         background-image: url(/public/img/Movil/HERO\ -\ movil.jpg);
         background-position: center center;
         background-repeat: no-repeat;
@@ -27,7 +15,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-width: 350px;
+        max-width: 340px;
         margin: 0 auto;
         padding-top: 150px;
         align-items: center;
@@ -35,9 +23,9 @@
     }
 
     .text-hero {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
     }
 
     .text {
@@ -51,6 +39,7 @@
         font-size: 30px;
         font-weight: 800;
         color: #fff;
+        
     }
 
     .text h1 span {
@@ -135,8 +124,8 @@
     }
 
     .foto {
-        position: absolute;
-        transform: translateX(-17%);
+        position: relative;
+        transform: translateX(-27%);
         
     }
     /* Section problem-solution */
@@ -155,6 +144,7 @@
     .problem {
         width: 100%;
         max-width: 340px;
+        padding: 0;
     }
 
     .problem h2 {
@@ -467,6 +457,190 @@
         align-items: center;
         margin-top: 24px;
     }
+    /* section step */
+
+    .step {
+        width: 100%;
+        max-width: 340px;
+        height: 1252px;
+        margin: auto ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    .step h2 {
+        font-family: "Montserrat", Poppins, sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+        color: #fff;
+    }
+
+    .step h2 span {
+        color: #F97316;
+    }
+
+    .description {
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        text-align: center;
+        color: #fff;
+        width: 100%;
+        max-width: 311px;
+        margin-top: 8px;
+        margin-bottom: 37px;
+    }
+
+    .steps{
+        display: grid;
+        grid-template-columns: repeat(1, 350px);
+        grid-template-rows: repeat(4, 200px);
+        gap: 20px;
+    }
+
+    .card-step{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background-image: url(/public/img/PUNTO\ 1\ -\ steps.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+
+    .card-step span{
+        font-family: "Poppins", sans-serif;
+        font-size: 200px;
+        font-weight: 700;
+        color: transparent;
+        -webkit-text-stroke: 1px #ea5a0c;
+        position: absolute;
+        transform: translate(0%, 30%);
+        /* left: -51px; */
+        /* top: 60px; */
+        line-height: 10px;
+        user-select: none; 
+        z-index: 1;
+        filter: blur(3px);
+    }
+
+    .card-step h3{
+        font-family: "Montserrat", Poppins, sans-serif;
+        position: relative;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+        color: #fff;
+        z-index: 3;
+    }
+
+    .card-step p{
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        text-align: center;
+        color: #fff;
+        max-width: 281px;
+        margin-top: 8px;
+    }
+
+    .card-step .des{
+        max-width: 303px;
+    }
+    /* section contact */
+
+    .contact{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 340px;
+        height: 868px;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .form-contact{
+        width: 100%;
+        order: 2;
+    }
+
+    .text-contact{
+        width: 100%;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-contact h2 {
+        font-family: "Montserrat", Poppins, sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+        color: #fff;
+        width: 100%;
+        max-width: 230px;
+    }
+
+
+    .text-contact p{
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: justify;
+        color: #fff;
+        max-width: 463px;
+        margin-top: 8px;
+        margin-bottom: 36px;
+    }
+
+    .button-contact{
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 24px;
+        background-color: #F97316;
+        color: #fff;
+        border-radius: 50px;
+        padding: 10px 28px;
+        border: 0px;
+        text-decoration: none;
+        text-align: center;
+        width: fit-content;
+    }
+
+    .contac-info {
+        margin-top: 30px;
+        color: #fff;
+        list-style: none;
+        gap: 10px;
+    }
+
+    .contac-info li{
+        display: flex;
+        font-family: "Poppins", sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* Form-contact */
+    .form-row{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
 }
 
 

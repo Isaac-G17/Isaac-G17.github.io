@@ -1,6 +1,5 @@
-/* @import url(/src/css/responsive.css);
 @import url(/src/css/header.css);
-@import url(/src/css/form.css); */
+@import url(/src/css/form.css);
 * {
     margin: 0;
     padding: 0;
@@ -44,7 +43,8 @@ body {
     font-size: 50px;
     font-weight: 800;
     color: #fff;
-    width: 567px;
+    width: 100%;
+    max-width: 567px;
 }
 
 .text h1 span {
