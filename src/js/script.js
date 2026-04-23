@@ -1,6 +1,6 @@
 const btn = document.getElementById("mover-btn");
 const box = document.getElementById("box-solution");
 
-btn.addEventListener("click", function(){
-    box.style.transform = "translateX(-800px)";
+btn.addEventListener("click", () => {
+    box.classList.toggle("active");
 });
