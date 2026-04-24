@@ -12,7 +12,7 @@
     }
 
     .text h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .text p {
@@ -108,10 +108,9 @@
         max-width: 90%;
     }
 
-    .buttons-about{
+    .buttons{
         display: flex;
         flex-wrap: wrap;
-        grid-template-columns: repeat(1, 1fr);
         gap: 20px;
     }
     .step{
@@ -175,7 +174,6 @@
     }
 
     .button-main {
-        margin-bottom: 20px;
         width: fit-content;
     }
 
@@ -242,9 +240,9 @@
     /* Section service */
     .service {
         background-image: url(/public/img/Movil/SERVICIOS-movil.jpg);
-        background-position: center bottom;
+        background-position: center top;
         background-repeat: no-repeat;
-        background-size: auto;
+        background-size: cover;
     }
 
     .contend-service {
@@ -252,6 +250,7 @@
         max-width: 340px;
         height: 1110px;
         overflow: visible;
+        background-image: none;
     }
 
     .service h2 {
@@ -296,9 +295,9 @@
     /* section about */
     .about {
         background-image: url(/public/img/Movil/SOBREMI-movil.jpg);
-        background-position: center top;
+        background-position: center center;
         background-repeat: no-repeat;
-        background-size: auto;
+        background-size: cover;
         overflow: hidden;
     }
 
@@ -317,10 +316,6 @@
 
     .text-about {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
     }
 
     .text-about h2 {
@@ -332,13 +327,9 @@
     .text-about p{
         width: 100%;
         max-width: 340px;
+        margin: 0;
     }
 
-    .buttons-about {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
     /* section step */
 
     .step {
