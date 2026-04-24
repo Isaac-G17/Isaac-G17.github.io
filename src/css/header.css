@@ -67,11 +67,11 @@ header{
     margin: 2px 0;
     transition: 0.3s;
 }
-
-@media (max-width: 768px){
+@media (max-width: 1024px) {
     .header-bar{
-    width: 100%;
-    max-width: 340px;
+        width: 100%;
+        max-width: 1024px;
+        padding: 0 20px;
     }
 
     .logo{
@@ -86,13 +86,12 @@ header{
     .navbar{
         display: none;
         position: absolute;
-        top: 105%;
+        top: 100%;
         right: 0;
-        background-color: #f9731626;
-        /* backdrop-filter: blur(10px);  */
+        background-color: #f97416;
         width: 100%;
+        border-radius: 0 0 20px 20px ;
         text-align: center;
-        z-index: 1000;
         padding: 20px;
     }
 
@@ -102,7 +101,52 @@ header{
     }
 
     .navbar .active{
+        color: #000;
+    }
+
+    .hamburger{
+        display: flex;
+    }
+
+    .navbar.show{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 768px){
+    .header-bar{
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .logo{
+        font-family: "Montserrat", poppins ,sans-serif;
+        font-size: 30px;
+        font-weight: 800;
+        font-style: italic;
+        text-decoration: none;
         color: #F97316;
+    }
+
+    .navbar{
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #f97416;
+        width: 100%;
+        border-radius: 0 0 20px 20px ;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .navbar ul{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar .active{
+        color: #000;
     }
 
     .hamburger{
