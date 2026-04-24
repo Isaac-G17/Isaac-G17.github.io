@@ -1,0 +1,27 @@
+.button-main {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    background-color: #F97316;
+    color: #fff;
+    border-radius: 50px;
+    margin-right: 18px;
+    padding: 10px 28px;
+    border: 0px;
+    text-decoration: none;
+}
+
+.button-second {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    background-color: #ffffff00;
+    color: #F97316;
+    border: 1px solid #F97316;
+    border-radius: 50px;
+    padding: 10px 28px;
+    text-decoration: none;
+    /* position: relative; */
+}
+
+.button-second:hover {
+    color: #fff;
+}

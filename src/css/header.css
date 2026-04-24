@@ -1,0 +1,162 @@
+header{
+    width: 100%;
+    background-color: #f9731626;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid #ffffff1a; 
+    box-shadow: 0 4px 30px #0000001a;
+}
+
+.header-bar{
+    display: flex;
+    width: 1140px;
+    height: 100px;
+    margin: 0 auto;
+    justify-content: space-between;    
+    align-items: center;
+}
+
+.logo{
+    font-family: "Montserrat", poppins ,sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: none;
+    color: #F97316;
+}
+
+.navbar ul{
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.navbar a{
+    font-family: "poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: right;
+    color: #fff;
+}
+
+.navbar a:hover{
+    color: #F97316;
+}
+
+.navbar .active{
+    color: #F97316;
+}
+
+.hamburger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.bar{
+    width: 25px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #fff;
+    margin: 2px 0;
+    transition: 0.3s;
+}
+@media (max-width: 1024px) {
+    .header-bar{
+        width: 100%;
+        max-width: 1024px;
+        padding: 0 20px;
+    }
+
+    .logo{
+        font-family: "Montserrat", poppins ,sans-serif;
+        font-size: 30px;
+        font-weight: 800;
+        font-style: italic;
+        text-decoration: none;
+        color: #F97316;
+    }
+
+    .navbar{
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #f97416;
+        width: 100%;
+        border-radius: 0 0 20px 20px ;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .navbar ul{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar .active{
+        color: #000;
+    }
+
+    .hamburger{
+        display: flex;
+    }
+
+    .navbar.show{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 768px){
+    .header-bar{
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .logo{
+        font-family: "Montserrat", poppins ,sans-serif;
+        font-size: 30px;
+        font-weight: 800;
+        font-style: italic;
+        text-decoration: none;
+        color: #F97316;
+    }
+
+    .navbar{
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #f97416;
+        width: 100%;
+        border-radius: 0 0 20px 20px ;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .navbar ul{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar .active{
+        color: #000;
+    }
+
+    .hamburger{
+        display: flex;
+    }
+
+    .navbar.show{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

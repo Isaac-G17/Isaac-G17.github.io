@@ -1,0 +1,402 @@
+@media (max-width: 1024px) { 
+    .hero{
+        overflow: hidden;
+    }
+    
+    .contend-hero{
+        width: 90%;
+        max-width: 1024px;
+    }
+    .text-hero {
+    width: 50%;
+    }
+
+    .text h1 {
+        font-size: 2rem;
+    }
+
+    .text p {
+        font-size: 1rem;
+        max-width: 517px;
+    }
+    
+    .button-main {
+        width: fit-content;
+    }
+
+    .button-second {
+        width: fit-content;
+    }
+
+    .points {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .foto {
+        transform: translateX(27%);
+    }
+
+    /* Section problem-solution */
+    .problem-solution{
+        width: 100%;
+        max-width: 1024px;
+    }
+    .problem {
+        width: 50%;
+        padding-left: 0;
+    }
+
+    .solution {
+        width: 40%;
+        flex-direction: column;
+    }
+
+    /* Section service */
+    .contend-service{
+        width: 100%;
+        max-width: 1024px;
+        overflow: hidden;
+    }
+
+    .services {
+        display: flex;
+        width: 100%;
+        max-width: 1024px;
+        margin: 40px 0px;
+        gap: 20px;
+        flex-flow: column;
+    }
+
+    .services-row-1 {
+        display: flex;
+        flex-flow: wrap;
+        gap: 20px;
+        margin: 0 ;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .services-row-2 {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 20px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .glass-orange {
+        margin: 0;
+    }
+
+    .glass{
+        margin: 0;
+    }
+
+    .glass p,
+    .glass-2 p {
+        margin: 8px 0 0;
+        max-width: 270px;
+    }
+
+    .contend-about{
+        width: 100%;
+        max-width: 1024px;
+    }
+
+    .text-about p{
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .buttons{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .step{
+        width: 100%;
+        max-width: 1024px;
+    }
+    .contact{
+        width: 100%;
+        max-width: 1024px;
+    }
+
+    /* Form-contact */
+    .form-row{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+/* // `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 768px) {
+    /* section hero */
+    .hero{
+        height: 1216px;
+        padding: px;
+        background-image: url(/public/img/Movil/HERO\ -\ movil.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .contend-hero {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+        padding-top: 150px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text-hero {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .text h1 {
+        font-size: 30px;       
+    }
+    .text p {
+        font-size: 15px;
+    }
+
+    .button-main {
+        width: fit-content;
+    }
+
+    .button-second {
+        width: fit-content;
+    }
+
+    .img-hero {
+        width: 100%;
+    }
+
+    .foto {
+        position: relative;
+        transform: translateX(-17%);
+        
+    }
+    /* Section problem-solution */
+
+    .problem-solution {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 20px;
+        padding: 50px 0px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .problem {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .problem h2 {
+        font-size: 18px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .problem p {
+        text-align: justify;
+    }
+
+    .solution {
+        overflow: hidden;
+        width: 100%;
+        height: 400px;
+        flex-direction: column;
+        justify-content: center;
+        background-size: auto;
+        background-position: center 10px;
+    }
+    
+    .box-solution {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        max-width: 366px;
+        transform: translateX(60%);
+    }
+
+    /* Section service */
+    .service {
+        background-image: url(/public/img/Movil/SERVICIOS-movil.jpg);
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .contend-service {
+        width: 100%;
+        max-width: 340px;
+        height: 1110px;
+        overflow: visible;
+        background-image: none;
+    }
+
+    .service h2 {
+        font-size: 20px;
+    }
+
+    .services {
+        width: 100%;
+    }
+
+    .services-row-1 {
+        flex-direction: column;
+        gap: 20px;
+        margin: 0 auto;
+    }
+
+    .services-row-2 {
+        flex-direction: column;
+    }
+
+    .glass-orange {
+        background-image: url(/public/img/Movil/recurso-1.png);
+    }
+
+    .glass-orange-2 {
+        width: 350px;
+        background-image: url(/public/img/Movil/recurso-1.png);
+    }
+    .glass {
+        background-image: url(/public/img/Movil/recurso-2.png);
+    }
+
+    .glass-2 {
+        width: 350px;
+        background-image: url(/public/img/Movil/recurso-2.png);
+    }
+
+    .glass p,
+    .glass-2 p {
+        max-width: 270px;
+    }
+    /* section about */
+    .about {
+        background-image: url(/public/img/Movil/SOBREMI-movil.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .contend-about {
+        flex-direction: column;
+        width: 350px;
+        height: 1092px;
+    }
+
+    .img-about {
+        width: 100%;
+        order: 2;
+        position: relative;
+        transform: translateX(-30%);
+    }
+
+    .text-about {
+        width: 100%;
+    }
+
+    .text-about h2 {
+        font-size: 25px;
+        width: 100%;
+        max-width: 232px;
+    }
+
+    .text-about p{
+        width: 100%;
+        max-width: 340px;
+        margin: 0;
+    }
+
+    /* section step */
+
+    .step {
+        width: 100%;
+        max-width: 340px;
+        height: 1252px;
+        padding: 0 10px;
+    }
+
+    .step h2 {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        width: 100%;
+        max-width: 311px;
+    }
+
+    .steps{
+        grid-template-columns: repeat(1, 350px);
+        grid-template-rows: repeat(4, 200px);
+    }
+
+
+    .card-step span{
+        transform: translate(-20%, 600%);
+    }
+
+    /* section contact */
+
+    .contact{
+        flex-direction: column;
+        width: 100%;
+        max-width: 340px;
+        height: 968px;
+    }
+
+    .form-contact{
+        width: 100%;
+        order: 2;
+    }
+
+    .text-contact{
+        width: 100%;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-contact h2 {
+        width: 100%;
+        max-width: 270px;
+        text-align: center;
+    }
+
+
+    .text-contact p{
+        text-align: justify;
+    }
+
+    .button-contact{
+        text-align: center;
+        width: fit-content;
+    }
+
+}
+
+
+
