@@ -48,8 +48,31 @@
     color: #fff;
 }
 
+.select-wrapper{
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.select-wrapper::after {
+    content: "⌄";
+    position: absolute;
+    top: -5px;
+    right: 18px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    pointer-events: none;
+}
+
 .contact-form select{
+    height: 30px;
     cursor: pointer;
+    background-color: #8B5E3C;
+    color: #FFFFFF;   
+    padding: 5px 15px;
+    border: none;
 }
 
 .contact-form textarea{
