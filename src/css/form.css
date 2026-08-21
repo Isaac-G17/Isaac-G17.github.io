@@ -50,6 +50,17 @@
 
 .contact-form select{
     cursor: pointer;
+    padding: 13px 15px;
+
+}
+
+.select-wrapper{
+    width: 100%;
+}
+
+.contact-form select option{
+    background-color: rgba(249, 115, 22, 0.9);
+    color: #fff;
 }
 
 .contact-form textarea{
