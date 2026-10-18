@@ -10,7 +10,6 @@ Documentación del portafolio de Isaac Guzmán: estado del sitio actual y plan p
 | [02 - Plan del MVP](02-plan-mvp.md) | Alcance, modelo de datos, stack, infraestructura y sprints de la nueva plataforma |
 | [03 - Blog tech](03-blog.md) | Categorías, modelo, funciones e ideas de contenido para el blog |
 | [04 - Arquitectura](04-arquitectura.md) | Arquitectura hexagonal del backend, puertos y adaptadores, tests por capa y estructura del frontend |
-| [05 - Backlog](05-backlog.md) | Historias de usuario y tareas de cada epic, enlazadas a Jira |
 
 ## Contexto
 
@@ -18,6 +17,6 @@ Documentación del portafolio de Isaac Guzmán: estado del sitio actual y plan p
 - **Objetivo:** convertirlo en una plataforma con panel de administración para publicar proyectos (WordPress y código) y artículos sin tocar código.
 - **Stack elegido:** Spring Boot con arquitectura hexagonal (backend), Angular (frontend), PostgreSQL y Cloudinary.
 - **Después del MVP:** Prometheus y Grafana, Redis, RabbitMQ y AWS.
-- **Gestión:** Scrum en Jira, espacio Portafolio.
+- **Gestión:** Scrum en Jira, espacio Portafolio. Las historias de usuario, las tareas y su estado viven solo en Jira.
 
 > Última actualización: 2026-10-16
