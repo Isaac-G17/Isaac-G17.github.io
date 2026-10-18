@@ -4,25 +4,40 @@ initNotifications();
 
 emailjs.init({
   publicKey: "1yAXMYL8iGTD1QQ42",
+  // Bloquea navegadores automatizados (bots)
+  blockHeadless: true,
+  // Máximo un envío cada 30 segundos desde este navegador
+  limitRate: {
+    id: "contact-form",
+    throttle: 30000,
+  },
+  // init() borra el almacenamiento por defecto; sin esto limitRate no funciona
+  storageProvider: {
+    get: (key) => Promise.resolve(localStorage.getItem(key)),
+    set: (key, value) => Promise.resolve(localStorage.setItem(key, value)),
+    remove: (key) => Promise.resolve(localStorage.removeItem(key)),
+  },
 });
 
 const contactForm = document.querySelector(".contact-form");
+const submitButton = contactForm.querySelector('button[type="submit"]');
+const submitButtonText = submitButton.textContent;
 
 contactForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  if (!validateForm()) {
+  if (submitButton.disabled || !validateForm()) {
     return;
   }
 
+  setSending(true);
+
   try {
-    const response = await emailjs.sendForm(
+    await emailjs.sendForm(
       "service_z34lvvl",
       "template_2lbrv1c",
       contactForm,
     );
-
-    console.log("Mensaje enviado:", response.status, response.text);
 
     showNotification(
       'success',
@@ -34,22 +49,42 @@ contactForm.addEventListener("submit", async (event) => {
   } catch (error) {
     console.error("Error al enviar el mensaje:", error);
 
+    if (error?.status === 429) {
+      showNotification(
+        'error',
+        'Espera un momento',
+        'Ya enviaste un mensaje hace poco. Inténtalo de nuevo en unos segundos.'
+      );
+
+      return;
+    }
+
     showNotification(
       'error',
       'No se pudo enviar',
       'Ocurrió un problema. Inténtalo nuevamente.'
     );
+  } finally {
+    setSending(false);
   }
 });
+
+function setSending(isSending) {
+  submitButton.disabled = isSending;
+  submitButton.textContent = isSending ? "Enviando…" : submitButtonText;
+  contactForm.setAttribute("aria-busy", String(isSending));
+}
 
 function validateName(name) {
   return name.trim().length >= 3;
 }
 
 function validatePhone(phone) {
-  const phoneRegex = /^[0-9]{7,15}$/;
+  // Acepta espacios, guiones, paréntesis y un + inicial: +57 312 273 3087
+  const cleanPhone = phone.replace(/[\s\-()]/g, "");
+  const phoneRegex = /^\+?[0-9]{7,15}$/;
 
-  return phoneRegex.test(phone);
+  return phoneRegex.test(cleanPhone);
 }
 
 function validateEmail(email) {
@@ -88,7 +123,7 @@ function validateForm() {
     showNotification(
       "error",
       "Celular inválido",
-      "Ingresa un número de celular válido."
+      "Ingresa un número válido, por ejemplo +57 312 273 3087."
     );
 
     return false;
