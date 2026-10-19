@@ -8,6 +8,9 @@ hamburger.addEventListener("click", () =>{
 const btn = document.getElementById("mover-btn");
 const box = document.getElementById("box-solution");
 
-btn.addEventListener("click", () => {
-    box.classList.toggle("active");
-});
+// El botón de flechas solo existe en el inicio, no en la página de proyectos
+if (btn && box) {
+    btn.addEventListener("click", () => {
+        box.classList.toggle("active");
+    });
+}
