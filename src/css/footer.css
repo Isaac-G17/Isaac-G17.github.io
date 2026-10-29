@@ -24,4 +24,5 @@ footer ul {
     justify-content: center;
     list-style-type: none;
     font-family: 'Poppins', sans-serif;
+    gap: 20px;
 }

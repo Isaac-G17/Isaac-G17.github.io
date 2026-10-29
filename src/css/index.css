@@ -595,3 +595,11 @@ body {
     gap: 10px;
     margin-bottom: 10px;
 }
+
+.contac-info a{
+    text-decoration: none;
+}
+
+.contac-info a:hover{
+    color: #F97316;
+}
