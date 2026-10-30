@@ -137,7 +137,7 @@
     .hero{
         height: 1216px;
         padding: px;
-        background-image: url(/public/img/Movil/HERO\ -\ movil.jpg);
+        background-image: url(/public/img/Movil/HERO\ -\ movil.webp);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -239,7 +239,7 @@
 
     /* Section service */
     .service {
-        background-image: url(/public/img/Movil/SERVICIOS-movil.jpg);
+        background-image: url(/public/img/Movil/SERVICIOS-movil.webp);
         background-position: center top;
         background-repeat: no-repeat;
         background-size: cover;
@@ -294,7 +294,7 @@
     }
     /* section about */
     .about {
-        background-image: url(/public/img/Movil/SOBREMI-movil.jpg);
+        background-image: url(/public/img/Movil/SOBREMI-movil.webp);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
