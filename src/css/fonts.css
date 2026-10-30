@@ -1,0 +1,28 @@
+/* Fuentes de respaldo con las métricas de las de Google Fonts: mientras cargan,
+   el texto ocupa el mismo espacio y la página no salta al cambiar de fuente */
+@font-face {
+    font-family: "Montserrat Fallback";
+    src: local("Arial");
+    size-adjust: 112.83%;
+    ascent-override: 85.79%;
+    descent-override: 22.25%;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: "Poppins Fallback";
+    src: local("Arial");
+    size-adjust: 112.16%;
+    ascent-override: 93.62%;
+    descent-override: 31.21%;
+    line-gap-override: 8.92%;
+}
+
+@font-face {
+    font-family: "Bebas Neue Fallback";
+    src: local("Arial");
+    size-adjust: 76.72%;
+    ascent-override: 117.32%;
+    descent-override: 39.11%;
+    line-gap-override: 0%;
+}

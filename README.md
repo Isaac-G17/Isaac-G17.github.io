@@ -1,6 +1,6 @@
 # Portafolio Web - Isaac Guzman
 
-![Preview del Portafolio](./public/img/proyectos/portafolio.jpg)
+![Preview del Portafolio](./public/img/proyectos/portafolio.webp)
 
 Portafolio web personal enfocado en mostrar proyectos, habilidades y servicios de desarrollo web con un diseño moderno y orientado a resultados.
 
