@@ -3,8 +3,9 @@ spring:
     name: portfolio
 
   # Base de datos. Los valores por defecto coinciden con docker-compose.yml (solo para local).
+  # En producción (Neon) se usa DB_SSLMODE=require.
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:portfolio}
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:portfolio}?sslmode=${DB_SSLMODE:prefer}
     username: ${DB_USER:portfolio}
     password: ${DB_PASSWORD:portfolio}
 
@@ -13,3 +14,17 @@ spring:
     hibernate:
       ddl-auto: validate
     open-in-view: false
+
+# Render asigna el puerto en la variable PORT.
+server:
+  port: ${PORT:8080}
+
+# Solo se expone /actuator/health, sin detalles internos.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never

@@ -97,6 +97,10 @@ La conexión usa estas variables de entorno; si no existen, toma los valores de 
 | `DB_NAME` | `portfolio` |
 | `DB_USER` | `portfolio` |
 | `DB_PASSWORD` | `portfolio` |
+| `DB_SSLMODE` | `prefer` |
+| `PORT` | `8080` |
+
+Para comprobar que está vivo: `http://localhost:8080/actuator/health` responde `{"status":"UP"}`.
 
 ### 3. Arrancar el frontend
 
@@ -135,6 +139,37 @@ npm test -- --watch=false
 ```
 
 Sin `--watch=false` los tests se quedan escuchando cambios y se repiten al guardar.
+
+## 🚢 Nueva plataforma: producción
+
+Cada fusión con `main` despliega automáticamente:
+
+| Parte | Servicio | Configuración en el repo |
+|---|---|---|
+| Frontend (SSR) | Netlify | `netlify.toml` |
+| Backend | Render (Docker) | `backend/Dockerfile` |
+| Base de datos | Neon (PostgreSQL) | — |
+
+Los secretos **nunca** van en el repositorio: se configuran en el panel de cada servicio.
+
+### Variables en Render (backend)
+
+| Variable | Valor |
+|---|---|
+| `DB_HOST` | Host de Neon **sin** `-pooler` (conexión directa, la que necesita Flyway) |
+| `DB_PORT` | `5432` |
+| `DB_NAME` | Nombre de la base de datos en Neon |
+| `DB_USER` | Usuario de Neon |
+| `DB_PASSWORD` | Contraseña de Neon (secreto) |
+| `DB_SSLMODE` | `require` |
+
+`PORT` la pone Render sola. El health check está en `/actuator/health`.
+
+### Variables en Netlify (frontend)
+
+| Variable | Valor |
+|---|---|
+| `NG_ALLOWED_HOSTS` | Dominio del sitio, por ejemplo `mi-sitio.netlify.app` |
 
 ---
 
