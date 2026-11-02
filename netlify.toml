@@ -1,0 +1,13 @@
+# Configuración de Netlify para el frontend (Angular con SSR).
+[build]
+  # Carpeta del monorepo donde está el frontend; las rutas de abajo son relativas a ella.
+  base = "frontend"
+  command = "npm run build"
+  publish = "dist/portfolio/browser"
+
+[build.environment]
+  NODE_VERSION = "26.13.0"
+
+# Convierte el servidor SSR de Angular en una función de Netlify.
+[[plugins]]
+  package = "@netlify/angular-runtime"
