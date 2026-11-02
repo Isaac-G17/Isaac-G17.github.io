@@ -78,7 +78,7 @@ Usar el `slug` en las URLs (`/proyectos/galeria-paredes-expression`) en vez del 
 ### Backend: Spring Boot
 
 - **Arquitectura hexagonal** (puertos y adaptadores). Detalle en [04 - Arquitectura](04-arquitectura.md).
-- **Java 21 y Spring Boot 3**, con Spring Web, Spring Data JPA y Validation.
+- **Java 21 y Spring Boot 4**, con Spring Web, Spring Data JPA y Validation.
 - **PostgreSQL** como base de datos y **Flyway** para las migraciones.
 - **Spring Security** con un solo administrador:
   - Contraseñas cifradas con BCrypt.
