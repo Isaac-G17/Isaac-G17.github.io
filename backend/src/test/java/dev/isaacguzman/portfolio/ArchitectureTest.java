@@ -26,7 +26,5 @@ public class ArchitectureTest {
 			.that().resideInAPackage("..application..")
 			.should().dependOnClassesThat()
 			.resideInAnyPackage("..infrastructure..", "jakarta.persistence..")
-			.because("los casos de uso hablan con el exterior solo mediante puertos")
-			// Todavía no hay clases en application; sin esto ArchUnit falla por regla vacía.
-			.allowEmptyShould(true);
+			.because("los casos de uso hablan con el exterior solo mediante puertos");
 }
