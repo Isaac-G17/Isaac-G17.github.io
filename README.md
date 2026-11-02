@@ -131,7 +131,7 @@ cd backend
 ./mvnw test
 ```
 
-Necesitan la base de datos del paso 1 encendida.
+Necesitan Docker Desktop encendido: los tests de integración levantan su propio PostgreSQL con Testcontainers, así que no usan la base de datos del paso 1.
 
 ```bash
 cd frontend
