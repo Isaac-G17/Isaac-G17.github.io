@@ -126,4 +126,66 @@ public class PostJpaEntity {
 	public Instant getUpdatedAt() {
 		return updatedAt;
 	}
+
+	// Setters: los usa PostPersistenceMapper para copiar los datos del dominio al guardar.
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setSlug(String slug) {
+		this.slug = slug;
+	}
+
+	public void setExcerpt(String excerpt) {
+		this.excerpt = excerpt;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public void setCoverImageUrl(String coverImageUrl) {
+		this.coverImageUrl = coverImageUrl;
+	}
+
+	public void setCategory(CategoryJpaEntity category) {
+		this.category = category;
+	}
+
+	public void setTags(Set<TagJpaEntity> tags) {
+		this.tags = tags;
+	}
+
+	public void setReadingTimeMinutes(int readingTimeMinutes) {
+		this.readingTimeMinutes = readingTimeMinutes;
+	}
+
+	public void setStatus(PostStatus status) {
+		this.status = status;
+	}
+
+	public void setFeatured(boolean featured) {
+		this.featured = featured;
+	}
+
+	public void setSeoTitle(String seoTitle) {
+		this.seoTitle = seoTitle;
+	}
+
+	public void setSeoDescription(String seoDescription) {
+		this.seoDescription = seoDescription;
+	}
+
+	public void setPublishedAt(Instant publishedAt) {
+		this.publishedAt = publishedAt;
+	}
+
+	public void setCreatedAt(Instant createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public void setUpdatedAt(Instant updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 }

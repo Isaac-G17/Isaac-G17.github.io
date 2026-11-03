@@ -46,11 +46,49 @@ public record Post(
 		return status == PostStatus.PUBLISHED && !publishedAt.isAfter(now);
 	}
 
+	/** Publicado con una fecha que todavía no llega. */
+	public boolean isScheduledAt(Instant now) {
+		return status == PostStatus.PUBLISHED && publishedAt.isAfter(now);
+	}
+
 	public String effectiveSeoTitle() {
 		return seoTitle == null || seoTitle.isBlank() ? title : seoTitle;
 	}
 
 	public String effectiveSeoDescription() {
 		return seoDescription == null || seoDescription.isBlank() ? excerpt : seoDescription;
+	}
+
+	/** Artículo nuevo: siempre empieza como borrador. El tiempo de lectura se calcula del contenido. */
+	public static Post draft(PostDetails details, Instant now) {
+		return new Post(null, details.title(), details.slug(), details.excerpt(), details.content(),
+				details.coverImageUrl(), details.category(), details.tags(), ReadingTime.minutesFor(details.content()),
+				PostStatus.DRAFT, details.featured(), details.seoTitle(), details.seoDescription(), null, now, now);
+	}
+
+	/** Cambia los datos editables y recalcula el tiempo de lectura. El estado y la fecha no cambian. */
+	public Post update(PostDetails details, Instant now) {
+		return new Post(id, details.title(), details.slug(), details.excerpt(), details.content(),
+				details.coverImageUrl(), details.category(), details.tags(), ReadingTime.minutesFor(details.content()),
+				status, details.featured(), details.seoTitle(), details.seoDescription(), publishedAt, createdAt, now);
+	}
+
+	/**
+	 * Publica en la fecha indicada. Si es futura, el artículo queda programado: no se ve hasta ese momento.
+	 * Se puede volver a llamar para cambiar la fecha de un artículo programado.
+	 */
+	public Post publishAt(Instant publicationDate, Instant now) {
+		Objects.requireNonNull(publicationDate, "La fecha de publicación es obligatoria");
+		return new Post(id, title, slug, excerpt, content, coverImageUrl, category, tags, readingTimeMinutes,
+				PostStatus.PUBLISHED, featured, seoTitle, seoDescription, publicationDate, createdAt, now);
+	}
+
+	/** Vuelve a borrador y quita la fecha (también cancela una publicación programada). */
+	public Post unpublish(Instant now) {
+		if (status == PostStatus.DRAFT) {
+			return this;
+		}
+		return new Post(id, title, slug, excerpt, content, coverImageUrl, category, tags, readingTimeMinutes,
+				PostStatus.DRAFT, featured, seoTitle, seoDescription, null, createdAt, now);
 	}
 }

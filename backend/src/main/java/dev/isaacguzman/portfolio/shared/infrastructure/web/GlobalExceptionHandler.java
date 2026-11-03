@@ -1,6 +1,7 @@
 package dev.isaacguzman.portfolio.shared.infrastructure.web;
 
 import dev.isaacguzman.portfolio.shared.domain.ConflictException;
+import dev.isaacguzman.portfolio.shared.domain.InvalidDataException;
 import dev.isaacguzman.portfolio.shared.domain.NotFoundException;
 import java.util.Comparator;
 import java.util.List;
@@ -33,6 +34,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	public ProblemDetail handleNotFound(NotFoundException ex) {
 		ProblemDetail problem = ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
 		problem.setTitle("Recurso no encontrado");
+		return problem;
+	}
+
+	@ExceptionHandler(InvalidDataException.class)
+	public ProblemDetail handleInvalidData(InvalidDataException ex) {
+		ProblemDetail problem = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, ex.getMessage());
+		problem.setTitle("Datos inválidos");
 		return problem;
 	}
 
