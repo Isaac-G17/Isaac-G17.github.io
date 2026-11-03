@@ -63,6 +63,11 @@ class AdminProjectController {
 		return mapper.toAdmin(useCase.publish(id));
 	}
 
+	@PostMapping("/{id}/unpublish")
+	ProjectAdminResponse unpublish(@PathVariable Long id) {
+		return mapper.toAdmin(useCase.unpublish(id));
+	}
+
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	void delete(@PathVariable Long id) {
