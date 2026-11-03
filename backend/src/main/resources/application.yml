@@ -28,3 +28,13 @@ management:
   endpoint:
     health:
       show-details: never
+
+# Documentación de la API: /v3/api-docs (JSON) y /swagger-ui.html (página interactiva).
+springdoc:
+  # Solo se documenta la API propia, no el health check de Actuator.
+  paths-to-match: /api/**
+  # Las respuestas correctas son JSON; sin esto Swagger las muestra como "*/*".
+  default-produces-media-type: application/json
+  swagger-ui:
+    # Dentro de cada sección: primero GET, luego POST, PUT y DELETE.
+    operations-sorter: method
