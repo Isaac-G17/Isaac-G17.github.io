@@ -11,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.context.annotation.Import;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 
-/** Las categorías vienen de la migración V2, así que no hace falta cargar datos de prueba. */
+/** Las categorías vienen de la migración V2; posts.sql borra las que hayan creado otros tests. */
 @SpringBootTest
 @AutoConfigureMockMvc
 @Import(TestcontainersConfiguration.class)
+@Sql("/sql/posts.sql")
 class PublicCategoryApiIntegrationTest {
 
 	@Autowired

@@ -10,4 +10,15 @@ public record Tag(Long id, String name, Slug slug) {
 		Objects.requireNonNull(name, "El nombre de la etiqueta es obligatorio");
 		Objects.requireNonNull(slug, "El slug de la etiqueta es obligatorio");
 	}
+
+	/** Etiqueta nueva: el slug sale del nombre ("Spring Boot" → "spring-boot"). */
+	public static Tag named(String name) {
+		String cleanName = name.strip();
+		return new Tag(null, cleanName, Slug.fromText(cleanName));
+	}
+
+	public Tag rename(String newName) {
+		String cleanName = newName.strip();
+		return new Tag(id, cleanName, Slug.fromText(cleanName));
+	}
 }

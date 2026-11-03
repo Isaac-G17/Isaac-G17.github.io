@@ -37,4 +37,18 @@ public class CategoryJpaEntity {
 	public String getDescription() {
 		return description;
 	}
+
+	// Setters: los usa PostPersistenceMapper para copiar los datos del dominio al guardar.
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setSlug(String slug) {
+		this.slug = slug;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }

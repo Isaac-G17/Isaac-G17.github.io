@@ -15,4 +15,17 @@ public interface PostRepositoryPort {
 	PageResult<Post> findPublished(PostSearch search, Instant now, PageQuery page);
 
 	Optional<Post> findPublishedBySlug(Slug slug, Instant now);
+
+	/** Todos, en cualquier estado, del editado más recientemente al más antiguo. */
+	PageResult<Post> findAll(PageQuery page);
+
+	Optional<Post> findById(Long id);
+
+	/** {@code exceptId} permite ignorar el propio artículo al editarlo; puede ser null. */
+	boolean existsBySlug(Slug slug, Long exceptId);
+
+	/** Crea el artículo si no tiene id, o lo actualiza si ya existe. Devuelve la versión guardada. */
+	Post save(Post post);
+
+	void deleteById(Long id);
 }

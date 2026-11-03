@@ -13,4 +13,16 @@ interface SpringDataPostRepository extends JpaRepository<PostJpaEntity, Long>, J
 	@Override
 	@EntityGraph(attributePaths = "category")
 	Page<PostJpaEntity> findAll(Specification<PostJpaEntity> spec, Pageable pageable);
+
+	/** Todos los artículos, para el panel. */
+	@EntityGraph(attributePaths = "category")
+	Page<PostJpaEntity> findAllBy(Pageable pageable);
+
+	boolean existsBySlug(String slug);
+
+	boolean existsBySlugAndIdNot(String slug, Long id);
+
+	boolean existsByCategoryId(Long categoryId);
+
+	boolean existsByTagsId(Long tagId);
 }
