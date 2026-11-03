@@ -1,7 +1,7 @@
 package dev.isaacguzman.portfolio.project.infrastructure.out.persistence;
 
 import dev.isaacguzman.portfolio.project.domain.Project;
-import dev.isaacguzman.portfolio.project.domain.Slug;
+import dev.isaacguzman.portfolio.shared.domain.Slug;
 import java.util.List;
 import java.util.Set;
 import org.mapstruct.Mapper;

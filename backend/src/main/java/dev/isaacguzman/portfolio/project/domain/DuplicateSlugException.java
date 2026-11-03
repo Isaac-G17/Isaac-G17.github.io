@@ -1,5 +1,6 @@
 package dev.isaacguzman.portfolio.project.domain;
 
+import dev.isaacguzman.portfolio.shared.domain.Slug;
 import dev.isaacguzman.portfolio.shared.domain.ConflictException;
 
 public class DuplicateSlugException extends ConflictException {

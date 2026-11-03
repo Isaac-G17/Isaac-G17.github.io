@@ -1,4 +1,4 @@
-package dev.isaacguzman.portfolio.project.domain;
+package dev.isaacguzman.portfolio.shared.domain;
 
 import java.util.Objects;
 import java.util.regex.Pattern;

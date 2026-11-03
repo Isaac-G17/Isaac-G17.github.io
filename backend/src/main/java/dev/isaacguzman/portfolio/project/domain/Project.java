@@ -1,5 +1,6 @@
 package dev.isaacguzman.portfolio.project.domain;
 
+import dev.isaacguzman.portfolio.shared.domain.Slug;
 import java.time.Instant;
 import java.util.List;
 import java.util.Objects;

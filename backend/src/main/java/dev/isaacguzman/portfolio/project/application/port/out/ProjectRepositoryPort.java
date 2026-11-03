@@ -2,7 +2,7 @@ package dev.isaacguzman.portfolio.project.application.port.out;
 
 import dev.isaacguzman.portfolio.project.domain.Project;
 import dev.isaacguzman.portfolio.project.domain.ProjectType;
-import dev.isaacguzman.portfolio.project.domain.Slug;
+import dev.isaacguzman.portfolio.shared.domain.Slug;
 import java.util.List;
 import java.util.Optional;
 
