@@ -102,6 +102,8 @@ La conexión usa estas variables de entorno; si no existen, toma los valores de 
 
 Para comprobar que está vivo: `http://localhost:8080/actuator/health` responde `{"status":"UP"}`.
 
+**Documentación de la API (Swagger):** `http://localhost:8080/swagger-ui.html` muestra todos los endpoints, con sus esquemas y errores, y permite probarlos desde el navegador. La especificación OpenAPI en JSON está en `http://localhost:8080/v3/api-docs`.
+
 ### 3. Arrancar el frontend
 
 ```bash
