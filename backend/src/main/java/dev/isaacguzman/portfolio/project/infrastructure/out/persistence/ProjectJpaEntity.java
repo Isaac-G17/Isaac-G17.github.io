@@ -115,4 +115,62 @@ public class ProjectJpaEntity {
 	public Set<TechnologyJpaEntity> getTechnologies() {
 		return technologies;
 	}
+
+	// Setters: los usa ProjectPersistenceMapper para copiar los datos del dominio al guardar.
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setSlug(String slug) {
+		this.slug = slug;
+	}
+
+	public void setType(ProjectType type) {
+		this.type = type;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public void setCoverImageUrl(String coverImageUrl) {
+		this.coverImageUrl = coverImageUrl;
+	}
+
+	public void setLiveUrl(String liveUrl) {
+		this.liveUrl = liveUrl;
+	}
+
+	public void setRepoUrl(String repoUrl) {
+		this.repoUrl = repoUrl;
+	}
+
+	public void setFeatured(boolean featured) {
+		this.featured = featured;
+	}
+
+	public void setStatus(ProjectStatus status) {
+		this.status = status;
+	}
+
+	public void setPublishedAt(Instant publishedAt) {
+		this.publishedAt = publishedAt;
+	}
+
+	public void setCreatedAt(Instant createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public void setUpdatedAt(Instant updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public void setTechnologies(Set<TechnologyJpaEntity> technologies) {
+		this.technologies = technologies;
+	}
 }

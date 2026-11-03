@@ -41,4 +41,39 @@ public record Project(
 	public boolean isPublished() {
 		return status == ProjectStatus.PUBLISHED;
 	}
+
+	/** Proyecto nuevo: siempre empieza como borrador. */
+	public static Project draft(ProjectDetails details, Instant now) {
+		return new Project(null, details.title(), details.slug(), details.type(), details.summary(),
+				details.content(), details.coverImageUrl(), details.technologies(), details.liveUrl(),
+				details.repoUrl(), details.featured(), ProjectStatus.DRAFT, null, now, now);
+	}
+
+	/** Cambia los datos editables; el estado y la fecha de publicación no cambian al editar. */
+	public Project update(ProjectDetails details, Instant now) {
+		return new Project(id, details.title(), details.slug(), details.type(), details.summary(),
+				details.content(), details.coverImageUrl(), details.technologies(), details.liveUrl(),
+				details.repoUrl(), details.featured(), status, publishedAt, createdAt, now);
+	}
+
+	/** Publicar dos veces no cambia la fecha de la primera publicación. */
+	public Project publish(Instant now) {
+		if (isPublished()) {
+			return this;
+		}
+		return new Project(id, title, slug, type, summary, content, coverImageUrl, technologies, liveUrl,
+				repoUrl, featured, ProjectStatus.PUBLISHED, now, createdAt, now);
+	}
+
+	/**
+	 * Vuelve a borrador y quita la fecha de publicación: si se publica de nuevo, toma la fecha nueva.
+	 * Despublicar un borrador no cambia nada.
+	 */
+	public Project unpublish(Instant now) {
+		if (!isPublished()) {
+			return this;
+		}
+		return new Project(id, title, slug, type, summary, content, coverImageUrl, technologies, liveUrl,
+				repoUrl, featured, ProjectStatus.DRAFT, null, createdAt, now);
+	}
 }
