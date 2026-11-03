@@ -9,7 +9,12 @@ public final class PostResponses {
 	private PostResponses() {
 	}
 
+	/** Categoría dentro de un artículo: solo lo necesario para mostrarla y enlazarla. */
 	public record CategoryResponse(String name, String slug) {
+	}
+
+	/** Categoría en la lista de categorías del blog, con su descripción. */
+	public record BlogCategoryResponse(String name, String slug, String description) {
 	}
 
 	public record TagResponse(String name, String slug) {

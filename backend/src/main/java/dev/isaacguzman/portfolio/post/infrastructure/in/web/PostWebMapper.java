@@ -3,6 +3,7 @@ package dev.isaacguzman.portfolio.post.infrastructure.in.web;
 import dev.isaacguzman.portfolio.post.domain.Category;
 import dev.isaacguzman.portfolio.post.domain.Post;
 import dev.isaacguzman.portfolio.post.domain.Tag;
+import dev.isaacguzman.portfolio.post.infrastructure.in.web.dto.PostResponses.BlogCategoryResponse;
 import dev.isaacguzman.portfolio.post.infrastructure.in.web.dto.PostResponses.CategoryResponse;
 import dev.isaacguzman.portfolio.post.infrastructure.in.web.dto.PostResponses.PostDetailResponse;
 import dev.isaacguzman.portfolio.post.infrastructure.in.web.dto.PostResponses.PostSummaryResponse;
@@ -24,6 +25,9 @@ interface PostWebMapper {
 
 	@Mapping(target = "slug", source = "slug.value")
 	CategoryResponse toResponse(Category category);
+
+	@Mapping(target = "slug", source = "slug.value")
+	BlogCategoryResponse toBlogCategory(Category category);
 
 	@Mapping(target = "slug", source = "slug.value")
 	TagResponse toResponse(Tag tag);
