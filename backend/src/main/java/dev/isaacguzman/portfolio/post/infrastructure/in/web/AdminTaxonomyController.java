@@ -7,6 +7,13 @@ import dev.isaacguzman.portfolio.post.infrastructure.in.web.dto.AdminResponses.C
 import dev.isaacguzman.portfolio.post.infrastructure.in.web.dto.AdminResponses.TagAdminResponse;
 import dev.isaacguzman.portfolio.post.infrastructure.in.web.dto.TaxonomyRequests.CategoryRequest;
 import dev.isaacguzman.portfolio.post.infrastructure.in.web.dto.TaxonomyRequests.TagRequest;
+import dev.isaacguzman.portfolio.shared.infrastructure.web.openapi.ApiTags;
+import dev.isaacguzman.portfolio.shared.infrastructure.web.openapi.BadRequestResponse;
+import dev.isaacguzman.portfolio.shared.infrastructure.web.openapi.ConflictResponse;
+import dev.isaacguzman.portfolio.shared.infrastructure.web.openapi.NotFoundResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.List;
@@ -28,6 +35,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api/admin")
+// Nombre completo porque "Tag" ya es la etiqueta del blog (dominio) en este archivo.
+@io.swagger.v3.oas.annotations.tags.Tag(name = ApiTags.BLOG_ADMIN)
 class AdminTaxonomyController {
 
 	private final ManageTaxonomyUseCase useCase;
@@ -41,18 +50,29 @@ class AdminTaxonomyController {
 	// --- Categorías ---
 
 	@GetMapping("/categories")
+	@Operation(summary = "Lista las categorías", description = "En orden alfabético, con su id.")
 	List<CategoryAdminResponse> categories() {
 		return useCase.getAllCategories().stream().map(mapper::toAdmin).toList();
 	}
 
 	@PostMapping("/categories")
+	@Operation(summary = "Crea una categoría", description = "Si no se envía el slug, se genera del nombre.")
+	@ApiResponse(responseCode = "201", description = "Creada; la cabecera Location apunta a la nueva categoría")
+	@BadRequestResponse
+	@ConflictResponse
 	ResponseEntity<CategoryAdminResponse> createCategory(@Valid @RequestBody CategoryRequest request) {
 		Category created = useCase.createCategory(request.name(), mapper.toSlug(request.slug()), request.description());
 		return ResponseEntity.created(URI.create("/api/admin/categories/" + created.id())).body(mapper.toAdmin(created));
 	}
 
 	@PutMapping("/categories/{id}")
-	CategoryAdminResponse updateCategory(@PathVariable Long id, @Valid @RequestBody CategoryRequest request) {
+	@Operation(summary = "Edita una categoría")
+	@ApiResponse(responseCode = "200", description = "La categoría editada")
+	@BadRequestResponse
+	@NotFoundResponse
+	@ConflictResponse
+	CategoryAdminResponse updateCategory(@Parameter(description = "Id de la categoría") @PathVariable Long id,
+			@Valid @RequestBody CategoryRequest request) {
 		return mapper.toAdmin(
 				useCase.updateCategory(id, request.name(), mapper.toSlug(request.slug()), request.description()));
 	}
@@ -60,32 +80,51 @@ class AdminTaxonomyController {
 	/** 409 si algún artículo usa la categoría. */
 	@DeleteMapping("/categories/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	void deleteCategory(@PathVariable Long id) {
+	@Operation(summary = "Borra una categoría", description = "No se puede borrar si algún artículo la usa (409).")
+	@ApiResponse(responseCode = "204", description = "Borrada")
+	@NotFoundResponse
+	@ConflictResponse
+	void deleteCategory(@Parameter(description = "Id de la categoría") @PathVariable Long id) {
 		useCase.deleteCategory(id);
 	}
 
 	// --- Etiquetas ---
 
 	@GetMapping("/tags")
+	@Operation(summary = "Lista las etiquetas", description = "En orden alfabético, con su id.")
 	List<TagAdminResponse> tags() {
 		return useCase.getAllTags().stream().map(mapper::toAdmin).toList();
 	}
 
 	@PostMapping("/tags")
+	@Operation(summary = "Crea una etiqueta", description = "El slug se genera del nombre.")
+	@ApiResponse(responseCode = "201", description = "Creada; la cabecera Location apunta a la nueva etiqueta")
+	@BadRequestResponse
+	@ConflictResponse
 	ResponseEntity<TagAdminResponse> createTag(@Valid @RequestBody TagRequest request) {
 		Tag created = useCase.createTag(request.name());
 		return ResponseEntity.created(URI.create("/api/admin/tags/" + created.id())).body(mapper.toAdmin(created));
 	}
 
 	@PutMapping("/tags/{id}")
-	TagAdminResponse renameTag(@PathVariable Long id, @Valid @RequestBody TagRequest request) {
+	@Operation(summary = "Renombra una etiqueta", description = "El slug se vuelve a generar del nombre nuevo.")
+	@ApiResponse(responseCode = "200", description = "La etiqueta renombrada")
+	@BadRequestResponse
+	@NotFoundResponse
+	@ConflictResponse
+	TagAdminResponse renameTag(@Parameter(description = "Id de la etiqueta") @PathVariable Long id,
+			@Valid @RequestBody TagRequest request) {
 		return mapper.toAdmin(useCase.renameTag(id, request.name()));
 	}
 
 	/** 409 si algún artículo usa la etiqueta. */
 	@DeleteMapping("/tags/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	void deleteTag(@PathVariable Long id) {
+	@Operation(summary = "Borra una etiqueta", description = "No se puede borrar si algún artículo la usa (409).")
+	@ApiResponse(responseCode = "204", description = "Borrada")
+	@NotFoundResponse
+	@ConflictResponse
+	void deleteTag(@Parameter(description = "Id de la etiqueta") @PathVariable Long id) {
 		useCase.deleteTag(id);
 	}
 }
