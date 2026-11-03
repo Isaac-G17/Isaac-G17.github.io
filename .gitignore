@@ -28,3 +28,4 @@ npm-debug.log*
 .claude/settings.local.json
 .claude/launch.json
 CLAUDE.md
+graphify-out/
