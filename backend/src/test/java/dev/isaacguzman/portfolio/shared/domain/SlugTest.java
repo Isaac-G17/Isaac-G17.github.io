@@ -1,4 +1,4 @@
-package dev.isaacguzman.portfolio.project.domain;
+package dev.isaacguzman.portfolio.shared.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

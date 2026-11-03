@@ -15,7 +15,7 @@ import dev.isaacguzman.portfolio.project.domain.ProjectDetails;
 import dev.isaacguzman.portfolio.project.domain.ProjectNotFoundException;
 import dev.isaacguzman.portfolio.project.domain.ProjectStatus;
 import dev.isaacguzman.portfolio.project.domain.ProjectType;
-import dev.isaacguzman.portfolio.project.domain.Slug;
+import dev.isaacguzman.portfolio.shared.domain.Slug;
 import java.time.Clock;
 import java.time.Instant;
 import java.time.ZoneOffset;
