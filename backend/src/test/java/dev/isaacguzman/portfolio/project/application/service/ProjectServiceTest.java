@@ -123,6 +123,18 @@ class ProjectServiceTest {
 	}
 
 	@Test
+	void unpublishingReturnsTheProjectToDraft() {
+		when(repository.findById(1L)).thenReturn(Optional.of(publishedProject(1L, "app")));
+		when(repository.save(any())).thenAnswer(invocation -> invocation.getArgument(0));
+
+		Project draft = service.unpublish(1L);
+
+		assertThat(draft.status()).isEqualTo(ProjectStatus.DRAFT);
+		assertThat(draft.publishedAt()).isNull();
+		assertThat(draft.updatedAt()).isEqualTo(NOW);
+	}
+
+	@Test
 	void deletingAMissingProjectIsNotFound() {
 		when(repository.findById(99L)).thenReturn(Optional.empty());
 

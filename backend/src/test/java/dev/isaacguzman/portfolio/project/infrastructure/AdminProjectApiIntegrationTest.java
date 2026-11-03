@@ -121,6 +121,19 @@ class AdminProjectApiIntegrationTest {
 	}
 
 	@Test
+	void unpublishingHidesTheProjectButKeepsItInTheAdmin() throws Exception {
+		Long id = idOf("portafolio");
+		mvc.perform(post("/api/admin/projects/{id}/unpublish", id))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$.status").value("DRAFT"))
+				.andExpect(jsonPath("$.publishedAt", nullValue()));
+
+		mvc.perform(get("/api/public/projects/portafolio")).andExpect(status().isNotFound());
+		mvc.perform(get("/api/public/projects")).andExpect(jsonPath("$[*].slug", contains("tienda-ejemplo")));
+		mvc.perform(get("/api/admin/projects/{id}", id)).andExpect(status().isOk());
+	}
+
+	@Test
 	void deletesTheProject() throws Exception {
 		Long id = idOf("tienda-ejemplo");
 		mvc.perform(delete("/api/admin/projects/{id}", id)).andExpect(status().isNoContent());
