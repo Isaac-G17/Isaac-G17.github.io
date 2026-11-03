@@ -1,7 +1,10 @@
--- Datos para PublicPostApiIntegrationTest. Las categorías vienen de la migración V2.
+-- Datos de prueba del blog. Las 6 categorías vienen de la migración V2; se borran las que
+-- hayan creado otros tests, para que todos partan del mismo estado.
 DELETE FROM post_tags;
 DELETE FROM posts;
 DELETE FROM tags;
+DELETE FROM categories
+WHERE slug NOT IN ('desarrollo-web', 'backend', 'tutoriales', 'herramientas', 'opinion-y-noticias', 'mi-camino');
 
 INSERT INTO tags (name, slug) VALUES ('Java', 'java'), ('Spring', 'spring'), ('Angular', 'angular');
 
