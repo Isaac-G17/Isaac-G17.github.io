@@ -79,6 +79,12 @@ public class ProjectService implements GetPublishedProjectsQuery, ManageProjects
 
 	@Override
 	@Transactional
+	public Project unpublish(Long id) {
+		return projects.save(getById(id).unpublish(now()));
+	}
+
+	@Override
+	@Transactional
 	public void delete(Long id) {
 		getById(id);
 		projects.deleteById(id);

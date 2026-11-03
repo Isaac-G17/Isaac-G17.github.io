@@ -12,9 +12,10 @@ import org.mapstruct.MappingTarget;
 @Mapper
 interface ProjectPersistenceMapper {
 
-	// MapStruct confunde Project.publish(Instant) con un "setter fluido" (recibe un valor y devuelve
-	// el mismo tipo). No es un campo: se ignora para que no avise.
+	// MapStruct confunde publish(Instant) y unpublish(Instant) con "setters fluidos" (reciben un valor
+	// y devuelven el mismo tipo). No son campos: se ignoran para que no avise.
 	@Mapping(target = "publish", ignore = true)
+	@Mapping(target = "unpublish", ignore = true)
 	Project toDomain(ProjectJpaEntity entity);
 
 	/**

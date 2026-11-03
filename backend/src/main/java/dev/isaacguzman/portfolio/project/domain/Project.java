@@ -64,4 +64,16 @@ public record Project(
 		return new Project(id, title, slug, type, summary, content, coverImageUrl, technologies, liveUrl,
 				repoUrl, featured, ProjectStatus.PUBLISHED, now, createdAt, now);
 	}
+
+	/**
+	 * Vuelve a borrador y quita la fecha de publicación: si se publica de nuevo, toma la fecha nueva.
+	 * Despublicar un borrador no cambia nada.
+	 */
+	public Project unpublish(Instant now) {
+		if (!isPublished()) {
+			return this;
+		}
+		return new Project(id, title, slug, type, summary, content, coverImageUrl, technologies, liveUrl,
+				repoUrl, featured, ProjectStatus.DRAFT, null, createdAt, now);
+	}
 }

@@ -24,5 +24,8 @@ public interface ManageProjectsUseCase {
 
 	Project publish(Long id);
 
+	/** Lo oculta del sitio público sin borrarlo: vuelve a borrador. */
+	Project unpublish(Long id);
+
 	void delete(Long id);
 }
