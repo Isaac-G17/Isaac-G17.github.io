@@ -13,4 +13,17 @@ public interface ProjectRepositoryPort {
 	List<Project> findPublished(ProjectType type);
 
 	Optional<Project> findPublishedBySlug(Slug slug);
+
+	/** Todos los proyectos, en cualquier estado, del editado más recientemente al más antiguo. */
+	List<Project> findAll();
+
+	Optional<Project> findById(Long id);
+
+	/** {@code exceptId} permite ignorar el propio proyecto al editarlo; puede ser null. */
+	boolean existsBySlug(Slug slug, Long exceptId);
+
+	/** Crea el proyecto si no tiene id, o lo actualiza si ya existe. Devuelve la versión guardada. */
+	Project save(Project project);
+
+	void deleteById(Long id);
 }

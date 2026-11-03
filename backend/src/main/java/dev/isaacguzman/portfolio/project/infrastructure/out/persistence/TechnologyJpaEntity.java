@@ -20,6 +20,10 @@ public class TechnologyJpaEntity {
 		// Requerido por JPA
 	}
 
+	TechnologyJpaEntity(String name) {
+		this.name = name;
+	}
+
 	public Long getId() {
 		return id;
 	}

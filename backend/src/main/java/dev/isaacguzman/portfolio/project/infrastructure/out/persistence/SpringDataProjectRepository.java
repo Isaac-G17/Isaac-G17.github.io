@@ -18,4 +18,14 @@ interface SpringDataProjectRepository extends JpaRepository<ProjectJpaEntity, Lo
 
 	@EntityGraph(attributePaths = "technologies")
 	Optional<ProjectJpaEntity> findBySlugAndStatus(String slug, ProjectStatus status);
+
+	@EntityGraph(attributePaths = "technologies")
+	List<ProjectJpaEntity> findAllByOrderByUpdatedAtDesc();
+
+	@EntityGraph(attributePaths = "technologies")
+	Optional<ProjectJpaEntity> findWithTechnologiesById(Long id);
+
+	boolean existsBySlug(String slug);
+
+	boolean existsBySlugAndIdNot(String slug, Long id);
 }
